@@ -21,13 +21,13 @@ class Main extends PluginBase implements Listener
     public function onPlayerJoin(PlayerJoinEvent $event)
     {
         $player = $event->getPlayer();
-        $event->setJoinMessage("");
+        $event->setJoinMessage("[§c-§f]");
     }
 
     public function onPlayerQuit(PlayerQuitEvent $event)
     {
         $player = $event->getPlayer();
-        $event->setQuitMessage("");
+        $event->setQuitMessage("[§a+§f]");
     }
 
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args, Player $player):bool
@@ -36,7 +36,7 @@ class Main extends PluginBase implements Listener
         {
             if($sender->hasPermission("JoinLeaveTest.cmd"))
             {
-                $sender->sendMessage("JoinLeave ist Aktiv!");
+                $sender->sendMessage("JoinLeave is enabled!");
             }
         }return true;
     }
